@@ -1,4 +1,4 @@
-// Dogfood: lint spotlight-api's own openapi.yaml with Spotlight. Fails on errors.
+// Dogfood: lint this API's own openapi.yaml with OpenLint. Fails on errors.
 import { readFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';

@@ -1,10 +1,10 @@
 {
-  "name": "@spotlight-rules/spotlight-api",
+  "name": "@api-common/common-openlint-api",
   "version": "1.1.0",
-  "description": "A small OpenAPI-first HTTP API for Spotlight — lint API artifacts, list rules/rulesets, and validate rulesets over HTTP. Runs the @spotlight-rules engine.",
+  "description": "The API Commons OpenLint API: a small OpenAPI-first HTTP API to lint API artifacts, list rules/rulesets, and validate rulesets over HTTP. Runs the @openlint engine.",
   "type": "module",
   "bin": {
-    "spotlight-api": "src/server.mjs"
+    "common-openlint-api": "src/server.mjs"
   },
   "scripts": {
     "start": "node src/server.mjs",
@@ -13,14 +13,15 @@
     "check": "npm run lint:self"
   },
   "license": "Apache-2.0",
-  "repository": "github:api-commons/spotlight-api",
+  "repository": "github:api-commons/common-openlint-api",
   "dependencies": {
-    "@spotlight-rules/spotlight-core": "^1.1.0",
-    "@spotlight-rules/spotlight-formats": "^1.1.0",
-    "@spotlight-rules/spotlight-functions": "^1.1.0",
-    "@spotlight-rules/spotlight-parsers": "^1.1.0",
-    "@spotlight-rules/spotlight-rulesets": "^1.1.0",
+    "@openlint/openlint-core": "^0.0.1",
+    "@openlint/openlint-formats": "^0.0.1",
+    "@openlint/openlint-functions": "^0.0.1",
+    "@openlint/openlint-parsers": "^1.0.0",
+    "@openlint/openlint-rulesets": "^0.0.1",
     "fastify": "^5.2.0",
     "yaml": "^2.6.1"
-  }
+  },
+  "private": true
 }

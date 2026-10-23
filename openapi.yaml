@@ -1,15 +1,15 @@
 openapi: 3.1.0
 info:
-  title: Spotlight API
+  title: API Commons OpenLint API
   version: 1.0.0
   description: >-
-    A small HTTP surface over the Spotlight engine — lint API artifacts, list the
+    A small HTTP surface over the OpenLint engine — lint API artifacts, list the
     built-in rulesets and supported formats, and validate a ruleset. Part of the
-    Spotlight governance suite; runs the same @spotlight-rules engine as the CLI,
-    VS Code extension, and browser validator.
+    API Commons governance tooling; runs the same @openlint engine as the
+    openlint CLI and the API Commons validator.
   contact:
     name: API Commons
-    url: https://spotlight-rules.com
+    url: https://apicommons.org
   license:
     name: Apache-2.0
     url: https://www.apache.org/licenses/LICENSE-2.0
@@ -62,7 +62,7 @@ paths:
                     items:
                       type: object
                       properties:
-                        alias: { type: string, example: 'spotlight:oas' }
+                        alias: { type: string, example: 'spectral:oas' }
                         rules:
                           type: array
                           items: { type: string }
@@ -70,7 +70,7 @@ paths:
     post:
       operationId: validateRuleset
       summary: Validate a ruleset
-      description: Structurally validate a ruleset (alias, definition object, or YAML/JSON string) against the Spotlight engine.
+      description: Structurally validate a ruleset (alias, definition object, or YAML/JSON string) against the OpenLint engine.
       tags: [Rulesets]
       requestBody:
         required: true
@@ -151,7 +151,11 @@ components:
           description: Artifact format; selects the default ruleset when none is given.
           enum: [openapi, asyncapi, arazzo, json-schema, apis-json, json-structure, json-ld, plans, rate-limits, finops, mcp]
         ruleset:
-          description: A ruleset alias ("spotlight:oas"), or a ruleset definition object. Defaults to the built-in ruleset for the format.
+          description: >-
+            A built-in ruleset alias (spectral:oas, spectral:asyncapi, spectral:arazzo),
+            or a ruleset definition object. Defaults to the built-in ruleset for the
+            format. Deprecated: the old aliases spotlight:oas, spotlight:asyncapi and
+            spotlight:arazzo are still accepted and map to the spectral:* equivalents.
     LintResult:
       type: object
       properties:

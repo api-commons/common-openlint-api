@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// spotlight-api — a small OpenAPI-first HTTP surface over the Spotlight engine.
+// common-openlint-api — the API Commons OpenLint API, a small OpenAPI-first HTTP surface over the OpenLint engine.
 import Fastify from 'fastify';
 import { readFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
@@ -21,9 +21,9 @@ app.addHook('onRequest', async (req, reply) => {
 });
 
 app.get('/', async () => ({
-  service: 'spotlight-api',
+  service: 'common-openlint-api',
   version: pkg.version,
-  description: 'Lint API artifacts and work with Spotlight rulesets over HTTP.',
+  description: 'Lint API artifacts and work with OpenLint rulesets over HTTP.',
   openapi: '/openapi.yaml',
   endpoints: ['POST /lint', 'GET /rulesets', 'GET /formats', 'POST /rulesets/validate', 'GET /health'],
 }));
@@ -71,7 +71,7 @@ app.post('/rulesets/validate', async (req, reply) => {
 
 const port = Number(process.env.PORT || 8080);
 const host = process.env.HOST || '0.0.0.0';
-app.listen({ port, host }).then(() => app.log.info(`spotlight-api on http://${host}:${port}`)).catch((e) => {
+app.listen({ port, host }).then(() => app.log.info(`common-openlint-api on http://${host}:${port}`)).catch((e) => {
   app.log.error(e);
   process.exit(1);
 });
