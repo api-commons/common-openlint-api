@@ -52,11 +52,6 @@ curl -s -X POST http://localhost:8080/lint \
 `"spectral:arazzo"`), or a full ruleset definition object (data form) that may
 `extends` the built-ins — the [OpenLint ruleset format](https://spec.openlint.org).
 
-**Deprecated aliases.** The old names `spotlight:oas`, `spotlight:asyncapi` and
-`spotlight:arazzo` are still accepted (as `ruleset` or inside `extends`) and map to
-the `spectral:*` equivalents, so existing callers keep working. `GET /rulesets` lists
-only the new names. Switch to `spectral:*`; the old aliases may be removed later.
-
 ## Part of the API Commons governance tooling
 
 This API is the HTTP surface other tools can build on. Related:

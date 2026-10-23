@@ -16,14 +16,7 @@ export const BUILTIN_RULESETS = {
   'spectral:arazzo': arazzo,
 };
 
-// Deprecated aliases from before the move to OpenLint, still accepted from HTTP
-// callers so existing requests keep working. Not listed by GET /rulesets.
-export const DEPRECATED_ALIASES = {
-  'spotlight:oas': 'spectral:oas',
-  'spotlight:asyncapi': 'spectral:asyncapi',
-  'spotlight:arazzo': 'spectral:arazzo',
-};
-const builtin = (name) => BUILTIN_RULESETS[DEPRECATED_ALIASES[name] ?? name];
+const builtin = (name) => BUILTIN_RULESETS[name];
 
 // Map a format string to the built-in ruleset alias.
 const FORMAT_RULESET = { openapi: 'spectral:oas', asyncapi: 'spectral:asyncapi', arazzo: 'spectral:arazzo' };

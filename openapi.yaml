@@ -154,8 +154,7 @@ components:
           description: >-
             A built-in ruleset alias (spectral:oas, spectral:asyncapi, spectral:arazzo),
             or a ruleset definition object. Defaults to the built-in ruleset for the
-            format. Deprecated: the old aliases spotlight:oas, spotlight:asyncapi and
-            spotlight:arazzo are still accepted and map to the spectral:* equivalents.
+            format.
     LintResult:
       type: object
       properties:
